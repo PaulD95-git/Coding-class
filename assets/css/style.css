@@ -131,6 +131,7 @@ footer .social-icons .icon:hover {
 
 /* Responsive styles */
 @media (min-width: 768px) {
+    /* Navigation */
     nav {
         height: 70px;
     }
@@ -154,5 +155,20 @@ footer .social-icons .icon:hover {
     nav ul li a {
         padding: 10px 20px;
         font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 0; /* More padding for larger screens */
+    }
+
+    footer .social-icons .icon {
+        font-size: 36px; /* Larger icons on tablets and desktops */
+        width: 60px; /* Larger icon circle */
+        height: 60px; /* Maintain consistent circle size */
+    }
+
+    footer .social-icons {
+        gap: 20px; /* More space between icons */
     }
 }

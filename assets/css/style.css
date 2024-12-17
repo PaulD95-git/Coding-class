@@ -86,3 +86,30 @@ nav input[type="checkbox"]:checked ~ ul {
     display: flex;
 }
 
+/* Responsive styles */
+@media (min-width: 768px) {
+    nav {
+        height: 70px;
+    }
+
+    nav .checkbtn {
+        display: none; /* Hide hamburger menu on larger screens */
+    }
+
+    nav ul {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    nav ul li {
+        border: none;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}

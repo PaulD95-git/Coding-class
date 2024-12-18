@@ -642,3 +642,59 @@ footer .social-icons .icon:hover {
         font-size: 35px; /* Larger icons font */
     }
 }
+
+
+@media (max-width: 1024px) {
+    .icon-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        gap: 15px; /* Reduce gap between icons */
+    }
+
+    .contact-icon {
+        width: 150px; /* Slightly smaller icons */
+        height: 150px;
+        padding: 20px; /* Reduced padding */
+    }
+
+    .contact-icon i {
+        font-size: 3.5rem; /* Smaller icons on tablets */
+    }
+
+    .contact-icon span {
+        font-size: 1.2rem; /* Smaller text size on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-page {
+        padding: 20px; /* Reduced padding for mobile */
+    }
+
+    .contact-page h1 {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    .contact-page p {
+        font-size: 1.2rem; /* Smaller paragraph text */
+        margin-bottom: 20px;
+    }
+
+    .icon-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        gap: 10px; /* Reduced gap between icons */
+    }
+
+    .contact-icon {
+        width: 120px; /* Smaller icons for mobile */
+        height: 120px;
+        padding: 15px; /* Reduced padding */
+    }
+
+    .contact-icon i {
+        font-size: 3rem; /* Smaller icon size */
+    }
+
+    .contact-icon span {
+        font-size: 1rem; /* Smaller text size */
+    }
+}

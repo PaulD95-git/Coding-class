@@ -1,25 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Asterisk wildcard selector to override default styles added by the browser  */
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html, body{
-    height: 100%;
+html, body {
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
 }
 
 /* General body styles */
 body {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 main {
-    flex: 1;
+    flex: 1; /* Allow main content to expand and fill the available space */
+    display: flex;
+    flex-direction: column;
 }
 
 /* General Navbar Styles */
@@ -110,11 +114,6 @@ header {
     padding: 40px 20px;
 }
 
-header .content {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
 header h1 {
     font-size: 1.8rem;
     margin-bottom: 15px;
@@ -142,27 +141,28 @@ header .cta:hover {
     transform: scale(1.05);
 }
 
+/* Features Section */
 .features {
-    padding: 20px 15px;
+    padding: 40px 15px;
     background: #f9f9f9;
-}
-
-.features .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack items vertically on mobile */
     gap: 20px;
-    max-width: 500px;
-    margin: 0 auto;
+    height: 100vh; /* Make the features section take up the full viewport height */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
 }
 
 .features .feature {
     background: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    margin: 10px;
+    flex: 1;
+    margin: 10px 0; /* Add margin between feature items */
+    max-width: 300px; /* Limit the size of each feature */
 }
 
 .features .feature:hover {
@@ -172,6 +172,7 @@ header .cta:hover {
 
 .features .feature h2 {
     font-size: 1.5rem;
+    margin-top: 15px;
     margin-bottom: 10px;
     color: #5077f5;
 }
@@ -181,16 +182,26 @@ header .cta:hover {
     color: #555;
 }
 
+/* Feature Images */
+.features .feature img {
+    width: 100%;
+    max-width: 200px; /* Limit image size for mobile */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+}
+
 /* Footer Styling (Mobile-First) */
 footer {
     background-color: #0082e6; /* Blue background */
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative; /* Default position */
+    position: relative;
     width: 100%;
     font-size: 14px; /* Smaller text for mobile */
-    margin-top: 20px; /* Adds space between footer and previous section */
+    margin-top: auto; /* Push footer to the bottom */
 }
 
 /* Social icons container */
@@ -223,4 +234,108 @@ footer .social-icons .icon {
 footer .social-icons .icon:hover {
     background: #1b9bff; 
     transform: scale(1.1);
+}
+
+
+/* Desktop / Tablet Navbar Styles */
+@media (min-width: 768px) {
+    nav {
+        height: 80px; /* Increase navbar height for desktop/tablet */
+    }
+
+    nav .logo {
+        color: white;
+        font-size: 40px; /* Set a consistent font size */
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block; /* Ensure the logo is inline and doesn't break into multiple lines */
+        line-height: 1; /* Ensure the text height is consistent */
+        white-space: nowrap;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Horizontal layout for the navbar items */
+        justify-content: flex-end; /* Align items to the right */
+        height: auto;
+        position: static; /* Navbar becomes static on larger screens */
+        background: none; /* Remove background on larger screens */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    nav ul li {
+        margin: 0 20px; /* Space out items horizontally */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Normal size for menu items */
+        text-align: left;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #ffd700;
+        transform: scale(1.05); /* Slight hover effect */
+    }
+
+    nav .checkbtn {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+
+    .features {
+        flex-direction: row; /* Change to horizontal layout */
+        flex-wrap: wrap; /* Allow wrapping of items if necessary */
+        justify-content: space-evenly; /* Spread out items evenly */
+    }
+
+    .features .feature {
+        flex: 1 1 calc(33% - 20px); /* Three items per row on larger screens */
+        margin: 15px;
+        max-width: 350px; /* Increase max-width of feature items */
+    }
+
+    .features .feature img {
+        width: 70%; /* Adjust image size for larger screens */
+        margin-bottom: 15px;
+    }
+
+    .features .feature h2 {
+        font-size: 1.75rem; /* Increase font size */
+    }
+
+    .features .feature p {
+        font-size: 1rem; /* Larger text for paragraphs */
+    }
+}
+
+@media (min-width: 1024px) {
+
+    nav ul li a {
+        font-size: 30px;
+    }
+
+    .features {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .features .feature {
+        flex: 1 1 calc(20% - 20px); /* Five items per row on desktop */
+        margin: 20px;
+        max-width: 400px; /* Increase max-width of feature items */
+    }
+
+    .features .feature img {
+        width: 80%; /* Increase image size for desktop */
+        margin-bottom: 20px;
+    }
+
+    .features .feature h2 {
+        font-size: 2rem; /* Larger heading text */
+    }
+
+    .features .feature p {
+        font-size: 1.1rem; /* Larger paragraph text */
+    }
 }

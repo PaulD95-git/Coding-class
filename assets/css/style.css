@@ -362,10 +362,10 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* General Contact Page Styles */
+/* Contact Page Styling */
 .contact-page {
     width: 100%;
-    height: auto; /* Allow height to adjust based on content */
+    height: 873px;
     text-align: center;
     padding: 40px;
     display: flex;
@@ -392,7 +392,7 @@ button:hover {
 /* Icon Grid */
 .icon-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default 4 columns for desktop */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
     gap: 20px;
     justify-items: center;
     align-items: center;
@@ -464,6 +464,7 @@ footer {
     width: 100%;
     font-size: 14px; /* Smaller text for mobile */
     margin-top: auto; /* Push footer to the bottom */
+    justify-content: center;
 }
 
 /* Social icons container */
@@ -590,6 +591,8 @@ footer .social-icons .icon:hover {
         height: 60px;
         font-size: 28px; /* Smaller font size */
     }
+
+    
 }
 
 
@@ -632,17 +635,12 @@ footer .social-icons .icon:hover {
         margin-top: 40px;
     }
 
-    .social-icons {
-        width: 300px; /* Adjust grid width on larger screens */
-    }
-
     .icon {
         width: 80px; /* Larger icons on desktops */
         height: 80px;
         font-size: 35px; /* Larger icons font */
     }
 }
-
 
 @media (max-width: 1024px) {
     .icon-grid {

@@ -362,6 +362,97 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* General Contact Page Styles */
+.contact-page {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.contact-page h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffebcd;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-page p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    color: #f8f8f8;
+    opacity: 0.9;
+}
+
+/* Icon Grid */
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default 4 columns for desktop */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Increased max-width */
+}
+
+/* Contact Icon Styles */
+.contact-icon {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 180px; /* Increased width */
+    height: 180px; /* Increased height */
+}
+
+.contact-icon i {
+    font-size: 4rem; /* Increased icon size */
+    margin-bottom: 10px;
+}
+
+.contact-icon span {
+    font-size: 1.4rem; /* Slightly increased text size */
+    font-weight: 500;
+}
+
+/* Hover Effects */
+.contact-icon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Platform-Specific Colors */
+.youtube {
+    color: #ff0000;
+}
+
+.instagram {
+    color: #c13584;
+}
+
+.twitter {
+    color: #1da1f2;
+}
+
+.facebook {
+    color: #1877f2;
+}
+
+
 
 /* Footer Styling (Mobile-First) */
 footer {
@@ -487,6 +578,18 @@ footer .social-icons .icon:hover {
         align-items: center;
         margin-top: 40px;
     }
+
+    .social-icons {
+        grid-template-columns: 1fr; /* Stack icons in a single column */
+        width: 100%; /* Full width of the container */
+        gap: 20px; /* Reduce gap between icons */
+    }
+
+    .icon {
+        width: 60px; /* Slightly smaller icons on mobile */
+        height: 60px;
+        font-size: 28px; /* Smaller font size */
+    }
 }
 
 
@@ -527,5 +630,15 @@ footer .social-icons .icon:hover {
     .sign {
         align-items: center;
         margin-top: 40px;
+    }
+
+    .social-icons {
+        width: 300px; /* Adjust grid width on larger screens */
+    }
+
+    .icon {
+        width: 80px; /* Larger icons on desktops */
+        height: 80px;
+        font-size: 35px; /* Larger icons font */
     }
 }

@@ -2,7 +2,9 @@
 
 Welcome to **Dublin Coding**, an educational platform offering coding classes in Dublin. This website is designed to provide users with essential information about the classes offered, including an easy-to-use sign-up form and contact details. The site is fully responsive and integrates with social media platforms for community engagement.
 
-![Dublin Coding Website](./assets/images/website-preview.png)
+Deployment link - https://pauld95-git.github.io/Coding-class/
+
+![Dublin Coding Website](/assets/images/amiresponsive.png)
 
 ## Table of Contents
 

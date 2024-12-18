@@ -7,11 +7,19 @@
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+}
+
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+main {
+    flex: 1;
 }
 
 /* General Navbar Styles */
@@ -22,46 +30,54 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.986);
+    position: relative;
+    z-index: 1000;
 }
 
 nav .logo {
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     text-decoration: none;
 }
 
+/* Fullscreen Menu Styles */
 nav ul {
-    display: none; /* Hidden by default for mobile */
+    display: none; /* Hidden by default */
     flex-direction: column;
     list-style: none;
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     background: #5077f5;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
+    z-index: 999; /* Appear above other elements */
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 nav ul li {
-    text-align: center;
-    border-bottom: 1px solid #444;
+    margin: 20px 0; /* Add space between menu items */
 }
 
 nav ul li a {
-    display: block;
     color: white;
     text-decoration: none;
-    padding: 15px;
-    font-size: 18px;
-    transition: background 0.3s;
+    font-size: 24px; /* Larger text for menu items */
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #7594fc;
+    color: #ffd700;
+    transform: scale(1.1);
 }
 
 /* Checkbox styles */
@@ -75,15 +91,94 @@ nav .checkbtn {
     color: white;
     cursor: pointer;
     display: block;
+    z-index: 1001; /* Appear above fullscreen menu */
 }
 
 nav .checkbtn i {
     font-size: 25px;
 }
 
-/* Show menu when checkbox is checked */
+/* Show fullscreen menu when checkbox is checked */
 nav input[type="checkbox"]:checked ~ ul {
     display: flex;
+}
+
+header {
+    background: linear-gradient(135deg, #5077f5, #7594fc);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header .content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+header .cta {
+    background: #ffffff;
+    color: #5077f5;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+header .cta:hover {
+    background: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.features {
+    padding: 20px 15px;
+    background: #f9f9f9;
+}
+
+.features .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.features .feature {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+}
+
+.features .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.features .feature h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #5077f5;
+}
+
+.features .feature p {
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* Footer Styling (Mobile-First) */
@@ -92,9 +187,10 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
-    position: relative;
+    position: relative; /* Default position */
     width: 100%;
     font-size: 14px; /* Smaller text for mobile */
+    margin-top: 20px; /* Adds space between footer and previous section */
 }
 
 /* Social icons container */
@@ -127,48 +223,4 @@ footer .social-icons .icon {
 footer .social-icons .icon:hover {
     background: #1b9bff; 
     transform: scale(1.1);
-}
-
-/* Responsive styles */
-@media (min-width: 768px) {
-    /* Navigation */
-    nav {
-        height: 70px;
-    }
-
-    nav .checkbtn {
-        display: none; /* Hide hamburger menu on larger screens */
-    }
-
-    nav ul {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        justify-content: flex-end;
-        width: auto;
-    }
-
-    nav ul li {
-        border: none;
-    }
-
-    nav ul li a {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-        padding: 30px 0; /* More padding for larger screens */
-    }
-
-    footer .social-icons .icon {
-        font-size: 36px; /* Larger icons on tablets and desktops */
-        width: 60px; /* Larger icon circle */
-        height: 60px; /* Maintain consistent circle size */
-    }
-
-    footer .social-icons {
-        gap: 20px; /* More space between icons */
-    }
 }

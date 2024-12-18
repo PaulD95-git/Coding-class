@@ -289,6 +289,79 @@ section {
     color: #555;
 }
 
+/* Signup Section */
+#signup {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+}
+
+#signup h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #5077f5;
+    margin-bottom: 20px;
+}
+
+#signup i {
+    margin-right: 10px;
+}
+
+/* Form Styling */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sign {
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Label and Input Styling */
+label {
+    font-size: 1rem;
+    color: #555;
+}
+
+.text-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #5077f5;
+    background-color: #fff;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #5077f5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #405dcf;
+    transform: scale(1.05);
+}
+
 
 /* Footer Styling (Mobile-First) */
 footer {
@@ -404,7 +477,18 @@ footer .social-icons .icon:hover {
     .features .feature p {
         font-size: 1rem; /* Larger text for paragraphs */
     }
+
+    #signup {
+        max-width: 500px; /* Increase the form size for tablets and desktops */
+        align-items: center;
+    }
+
+    .sign {
+        align-items: center;
+        margin-top: 40px;
+    }
 }
+
 
 @media (min-width: 1024px) {
 
@@ -435,5 +519,13 @@ footer .social-icons .icon:hover {
 
     .features .feature p {
         font-size: 1.1rem; /* Larger paragraph text */
+    }
+
+    #signup {
+        max-width: 600px; /* Further increase form width for larger screens */
+    }
+    .sign {
+        align-items: center;
+        margin-top: 40px;
     }
 }
